@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "the-new-silhouette",
+    "title": "The New Silhouette",
+    "category": "runway",
+    "date": "2026-06-28",
+    "hero": "https://images.pexels.com/photos/1396112/pexels-photo-1396112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Fashion houses are rethinking proportions for the new season—longer, leaner, more dramatic than ever.",
+    "author": "MODE Editorial",
+    "featured": true
+  },
+  {
+    "slug": "paris-street-style-july",
+    "title": "Paris Street Style: The Art of Effortless Dressing",
+    "category": "street-style",
+    "date": "2026-07-08",
+    "hero": "https://images.pexels.com/photos/2475235/pexels-photo-2475235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "From the Marais to Montmartre, we document the looks defining Parisian summer fashion.",
+    "author": "MODE Editorial",
+    "featured": true
+  },
+  {
+    "slug": "the-nostalgic-chic-of-retro-fashion",
+    "title": "The Nostalgic Chic of Retro Fashion",
+    "category": "culture",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/31748066/pexels-photo-31748066.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Explore how retro aesthetics influence contemporary fashion, evoking nostalgia while embracing modernity.",
+    "author": "MODE Editorial",
+    "featured": false
+  }
+]

@@ -35,6 +35,16 @@ const PEXELS_QUERIES = {
 // ---------- helpers ----------
 
 function readAllArticles() {
+  const indexPath = path.join(ARTICLES_DIR, "articles.json");
+  if (fs.existsSync(indexPath)) {
+    try {
+      const raw = fs.readFileSync(indexPath, "utf8");
+      return JSON.parse(raw);
+    } catch {
+      // fall through to file-based reading
+    }
+  }
+  // Fallback: read from MDX files directly
   if (!fs.existsSync(ARTICLES_DIR)) return [];
   return fs
     .readdirSync(ARTICLES_DIR)
@@ -44,7 +54,7 @@ function readAllArticles() {
       const slug = f.replace(".mdx", "");
       const title = raw.match(/^title:\s*"?(.+?)"?\s*$/m)?.[1] || slug;
       const category = raw.match(/^category:\s*(\S+)/m)?.[1] || "culture";
-      return { slug, title, category, raw };
+      return { slug, title, category };
     });
 }
 
@@ -262,18 +272,34 @@ function parseArticle(raw, category, pexelsPhoto) {
 }
 
 function buildMDX(article) {
-  return `---
-slug: ${article.slug}
-title: "${article.title}"
-category: ${article.category}
-date: "${article.date}"
-hero: "${article.hero}"
-excerpt: "${article.excerpt}"
-author: "${article.author}"
-featured: ${article.featured}
----
+  // Return just the body content — no YAML frontmatter.
+  // Metadata is stored in articles.json instead.
+  return article.content;
+}
 
-${article.content}`;
+function updateArticlesIndex(article) {
+  const indexPath = path.join(ARTICLES_DIR, "articles.json");
+  let articles = [];
+  if (fs.existsSync(indexPath)) {
+    try {
+      articles = JSON.parse(fs.readFileSync(indexPath, "utf8"));
+    } catch {
+      articles = [];
+    }
+  }
+  // Remove existing entry with same slug (shouldn't happen but be safe)
+  articles = articles.filter((a) => a.slug !== article.slug);
+  articles.push({
+    slug: article.slug,
+    title: article.title,
+    category: article.category,
+    date: article.date,
+    hero: article.hero,
+    excerpt: article.excerpt,
+    author: article.author,
+    featured: article.featured,
+  });
+  fs.writeFileSync(indexPath, JSON.stringify(articles, null, 2), "utf8");
 }
 
 // ---------- main ----------
@@ -321,6 +347,7 @@ async function main() {
       const filePath = path.join(ARTICLES_DIR, `${parsed.slug}.mdx`);
 
       fs.writeFileSync(filePath, mdx, "utf8");
+      updateArticlesIndex(parsed);
       console.log(`\n✅ Done!`);
       console.log(`   Title:   "${parsed.title}"`);
       console.log(`   File:    src/content/articles/${parsed.slug}.mdx`);

@@ -1,71 +1,55 @@
 // src/lib/articles.ts
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
 import type { ArticleMeta, ArticleCategory } from "@/types/article";
 
 const articlesDirectory = path.join(process.cwd(), "src/content/articles");
+const indexFilePath = path.join(articlesDirectory, "articles.json");
 
-function getAllArticleFiles(): string[] {
-  if (!fs.existsSync(articlesDirectory)) return [];
-  return fs
-    .readdirSync(articlesDirectory)
-    .filter((file) => file.endsWith(".mdx"));
-}
+let cachedArticles: ArticleMeta[] | null = null;
 
-function parseArticleFile(filename: string): ArticleMeta | null {
-  const filePath = path.join(articlesDirectory, filename);
-  const fileContents = fs.readFileSync(filePath, "utf8");
-  const { data } = matter(fileContents);
+function loadArticles(): ArticleMeta[] {
+  if (cachedArticles) return cachedArticles;
 
-  if (!data.slug || !data.title || !data.category) return null;
+  if (!fs.existsSync(indexFilePath)) return [];
 
-  return {
-    slug: data.slug,
-    title: data.title,
-    category: data.category as ArticleCategory,
-    date: data.date,
-    hero: data.hero || "/images/placeholder.svg",
-    excerpt: data.excerpt || "",
-    author: data.author || "MODE Editorial",
-    featured: data.featured || false,
-  };
+  try {
+    const raw = fs.readFileSync(indexFilePath, "utf8");
+    const articles = JSON.parse(raw) as ArticleMeta[];
+    articles.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+    cachedArticles = articles;
+    return articles;
+  } catch {
+    return [];
+  }
 }
 
 export function getAllArticles(): ArticleMeta[] {
-  const files = getAllArticleFiles();
-  const articles = files
-    .map(parseArticleFile)
-    .filter((a): a is ArticleMeta => a !== null)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  return articles;
+  return loadArticles();
 }
 
 export function getFeaturedArticles(): ArticleMeta[] {
-  return getAllArticles().filter((a) => a.featured);
+  return loadArticles().filter((a) => a.featured);
 }
 
 export function getArticleBySlug(slug: string): ArticleMeta | null {
-  const files = getAllArticleFiles();
-  for (const file of files) {
-    const article = parseArticleFile(file);
-    if (article && article.slug === slug) return article;
-  }
-  return null;
+  return loadArticles().find((a) => a.slug === slug) ?? null;
 }
 
 export function getArticlesByCategory(
   category: ArticleCategory
 ): ArticleMeta[] {
-  return getAllArticles().filter((a) => a.category === category);
+  return loadArticles().filter((a) => a.category === category);
 }
 
 export function getAllSlugs(): string[] {
-  return getAllArticles().map((a) => a.slug);
+  return loadArticles().map((a) => a.slug);
 }
 
 export function getAllCategories(): ArticleCategory[] {
   const cats = new Set<ArticleCategory>();
-  getAllArticles().forEach((a) => cats.add(a.category));
+  loadArticles().forEach((a) => cats.add(a.category));
   return Array.from(cats);
 }
