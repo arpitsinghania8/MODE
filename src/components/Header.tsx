@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import Link from "next/link";
 import MobileNav from "@/components/MobileNav";
+import Logo from "@/components/Logo";
 
 const NAV_LINKS = [
   { href: "/category/runway", label: "Runway" },
@@ -38,9 +39,9 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-display-sm text-mode-white neon-glow-hover hover:text-mode-gold transition-colors duration-200"
+            className="neon-glow-hover hover:text-mode-gold transition-colors duration-200"
           >
-            MODE
+            <Logo />
           </Link>
 
           {/* Desktop nav */}

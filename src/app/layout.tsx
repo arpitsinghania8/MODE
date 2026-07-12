@@ -18,9 +18,12 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "MODE — Fashion Blog",
+  title: "MODE — The Business of Fashion & Culture",
   description:
     "A curated editorial experience covering fashion, culture, and style through the lens of Swiss Modernism.",
+  icons: {
+    icon: "/logo-mark.svg",
+  },
 };
 
 export default function RootLayout({

@@ -1,5 +1,6 @@
 // src/components/Footer.tsx
 import GoldRule from "@/components/GoldRule";
+import Logo from "@/components/Logo";
 import Link from "next/link";
 
 const FOOTER_LINKS = [
@@ -17,13 +18,13 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="font-display text-display-sm text-mode-white neon-glow-hover hover:text-mode-gold transition-colors duration-200"
+              className="neon-glow-hover hover:text-mode-gold transition-colors duration-200 inline-block"
             >
-              MODE
+              <Logo showTagline={false} />
             </Link>
-            <p className="font-body text-sm text-mode-gray-600 mt-2 max-w-xs">
+            <p className="font-body text-sm text-mode-gray-600 mt-3 max-w-xs leading-relaxed">
               A curated editorial experience covering fashion, culture, and
-              style.
+              style through the lens of Swiss Modernism.
             </p>
           </div>
 
