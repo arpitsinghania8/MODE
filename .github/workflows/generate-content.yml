@@ -30,13 +30,23 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
 
       - name: Commit and push
+        id: commit
         run: |
           git config user.name "MODE Bot"
           git config user.email "bot@mode-blog.com"
           git add src/content/articles/
           if git diff --cached --quiet; then
             echo "No new articles to commit."
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Auto: generate new articles"
             git push
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Trigger deploy
+        if: steps.commit.outputs.has_changes == 'true'
+        run: |
+          gh workflow run "Deploy to GitHub Pages" --ref main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
