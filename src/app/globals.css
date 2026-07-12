@@ -189,3 +189,19 @@ body {
     padding-right: 4rem;
   }
 }
+
+/* ===================================================================
+   MDX Article Content
+   =================================================================== */
+
+.mdx-content > *:first-child {
+  margin-top: 0;
+}
+
+.mdx-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.mdx-content img {
+  border-radius: 2px;
+}
