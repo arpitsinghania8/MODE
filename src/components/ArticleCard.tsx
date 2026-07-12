@@ -37,15 +37,19 @@ export default function ArticleCard({ article, index = 0 }: ArticleCardProps) {
       className="group"
     >
       <Link href={`/articles/${article.slug}`} className="block">
-        <div className="relative w-full aspect-[4/3] overflow-hidden bg-mode-gray-900 rounded-sm mb-4">
+        <motion.div
+          className="relative w-full aspect-[4/3] overflow-hidden bg-mode-gray-900 rounded-sm mb-4"
+          whileHover={{ scale: 1.03 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        >
           <Image
             src={article.hero}
             alt={article.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-        </div>
+        </motion.div>
         <CategoryBadge category={article.category} className="mb-2" />
         <h3 className="font-display text-display-sm text-mode-white leading-[1.15] mb-2 neon-glow-hover group-hover:text-mode-gold transition-colors duration-300">
           {article.title}

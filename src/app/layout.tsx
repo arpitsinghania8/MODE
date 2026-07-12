@@ -34,8 +34,14 @@ export default function RootLayout({
       className={`${inter.variable} ${playfairDisplay.variable} antialiased`}
     >
       <body className="min-h-dvh bg-mode-black text-mode-white flex flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-mode-gold focus:text-mode-black focus:text-sm focus:font-medium focus:rounded-sm focus:outline-offset-0"
+        >
+          Skip to content
+        </a>
         <Header />
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />

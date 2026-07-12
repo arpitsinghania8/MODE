@@ -21,13 +21,14 @@ export default function ParallaxHero({ article }: ParallaxHeroProps) {
   });
 
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.4]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
 
   return (
     <div ref={ref} className="relative w-full h-full overflow-hidden">
       {/* Background image with parallax */}
-      <motion.div className="absolute inset-0" style={{ y: imageY }}>
+      <motion.div className="absolute inset-0" style={{ y: imageY, scale: imageScale }}>
         <Image
           src={article.hero}
           alt={article.title}

@@ -48,7 +48,7 @@ const components: MDXComponents = {
   ),
   li: ({ children }) => <li>{children}</li>,
   blockquote: ({ children }) => (
-    <blockquote className="border-l-2 border-mode-gold pl-6 my-10 font-display text-display-sm italic text-mode-gold leading-[1.3] neon-glow-border">
+    <blockquote className="border-l-2 border-mode-gold pl-6 my-10 font-display text-display-sm italic text-mode-gold-light leading-[1.3] neon-glow-border">
       {children}
     </blockquote>
   ),

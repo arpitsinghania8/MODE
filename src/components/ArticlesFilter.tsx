@@ -69,10 +69,10 @@ export default function ArticlesFilter({
             <motion.div
               key={article.slug}
               layout
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3, delay: i * 0.05 }}
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              transition={{ duration: 0.3, delay: i * 0.05, ease: "easeOut" }}
             >
               <ArticleCard article={article} index={i} />
             </motion.div>
