@@ -128,5 +128,55 @@
     "excerpt": "In the heart of Morelia, fashion transcends borders, celebrating a vivid tapestry of culture and modernity on the runway.",
     "author": "MODE Editorial",
     "featured": false
+  },
+  {
+    "slug": "street-style-berlin-contrast",
+    "title": "Contrast in Motion: Berlin’s Street Style Symphony",
+    "category": "street-style",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/36875915/pexels-photo-36875915.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Berlin's vibrant street style captures the essence of individuality against a monochromatic backdrop.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-urban-heritage-of-fashion",
+    "title": "The Urban Heritage of Fashion: Revisiting the Past to Inspire the Future",
+    "category": "culture",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/31748066/pexels-photo-31748066.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Exploring how urban landscapes and nostalgia shape the evolution of contemporary fashion.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-essence-of-radiance",
+    "title": "The Essence of Radiance: Unveiling the New Glow",
+    "category": "beauty",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/36840014/pexels-photo-36840014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Discover how to achieve that elusive glow with innovative products and techniques transforming beauty today.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "runway-evolution-dina-jsr",
+    "title": "The Evolution of Modern Elegance: A Spotlight on Dina JSR",
+    "category": "runway",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/262039/pexels-photo-262039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Discover the transformative designs of Dina JSR that redefine elegance on the runway.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "urban-elegance-nighttime-sophistication",
+    "title": "Urban Elegance: Nighttime Sophistication in Street Style",
+    "category": "street-style",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/29915167/pexels-photo-29915167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Discover how the vibrancy of city life inspires stunning nighttime looks that blend elegance with contemporary flair.",
+    "author": "MODE Editorial",
+    "featured": false
   }
 ]
