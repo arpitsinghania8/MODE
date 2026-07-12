@@ -228,5 +228,55 @@
     "excerpt": "Explore how the intricate stories of textiles shape the narrative of fashion today.",
     "author": "MODE Editorial",
     "featured": false
+  },
+  {
+    "slug": "embracing-the-art-of-accessorizing",
+    "title": "Embracing the Art of Accessorizing: Elevating Beauty with Sophistication",
+    "category": "beauty",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/34650790/pexels-photo-34650790.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Discover how the right accessories can transform your beauty routine into a statement of elegance and confidence.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "vibrant-evolution-of-fashion-in-morelia",
+    "title": "A Vibrant Evolution: Fashion Takes Center Stage in Morelia",
+    "category": "runway",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/1343522/pexels-photo-1343522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Morelia’s fashion scene bursts with color and creativity, redefining the boundaries of runway culture.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-berlin-uniform",
+    "title": "The Berlin Uniform: A Study in Street Style Identity",
+    "category": "street-style",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/36875915/pexels-photo-36875915.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Explore how Berlin's urban landscape shapes a unique street style identity that resonates globally.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-timeless-art-of-corsetry",
+    "title": "The Timeless Art of Corsetry: A Cultural Evolution",
+    "category": "culture",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/5326775/pexels-photo-5326775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Unraveling the intricate history of corsets reveals their enduring influence on fashion and femininity.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-art-of-illuminating-beauty",
+    "title": "The Art of Illuminating Beauty: Embracing Natural Radiance",
+    "category": "beauty",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/5468710/pexels-photo-5468710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Discover how to enhance your natural glow with effortless beauty techniques.",
+    "author": "MODE Editorial",
+    "featured": false
   }
 ]
