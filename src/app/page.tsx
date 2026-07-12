@@ -11,7 +11,7 @@ export default function HomePage() {
   const featuredArticles = getFeaturedArticles();
   const heroArticle = featuredArticles[0];
   const remainingFeatured = featuredArticles.slice(1, 4);
-  const latestArticles = allArticles;
+  const latestArticles = allArticles.slice(0, 10);
 
   return (
     <div>

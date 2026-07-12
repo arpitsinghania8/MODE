@@ -47,7 +47,7 @@ export default async function ArticlePage({ params }: PageProps) {
               src={article.hero}
               alt={article.title}
               fill
-              className="object-cover object-top"
+              className="object-contain"
               priority
               sizes="100vw"
             />

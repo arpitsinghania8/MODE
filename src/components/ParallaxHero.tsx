@@ -33,7 +33,7 @@ export default function ParallaxHero({ article }: ParallaxHeroProps) {
           src={article.hero}
           alt={article.title}
           fill
-          className="object-cover object-top"
+          className="object-contain"
           priority
           sizes="100vw"
         />
