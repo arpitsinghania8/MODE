@@ -78,5 +78,55 @@
     "excerpt": "Fashion houses are rethinking proportions for the new season—longer, leaner, more dramatic than ever.",
     "author": "MODE Editorial",
     "featured": true
+  },
+  {
+    "slug": "runway-elegance-in-purple",
+    "title": "The Allure of Elegance: Purple Takes Center Stage on the Runway",
+    "category": "runway",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/5185591/pexels-photo-5185591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Explore how the color purple is redefining couture elegance this season.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "luminous-nights",
+    "title": "Luminous Nights: Street Style Illuminated by Urban Energy",
+    "category": "street-style",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/29915167/pexels-photo-29915167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Explore how the vibrancy of city life transforms street style into an artful expression of individuality under the night sky.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-timeless-tapestry",
+    "title": "The Timeless Tapestry: Weaving Culture and Fashion",
+    "category": "culture",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/5326783/pexels-photo-5326783.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Discover how traditional garments echo through modern design, enriching our contemporary wardrobe.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "beauty-in-minimalism",
+    "title": "Embracing Minimalism: The Beauty of Less",
+    "category": "beauty",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/34650790/pexels-photo-34650790.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Discover how minimalism in beauty reflects authenticity and confidence in the modern world.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "runway-revolution-morelia",
+    "title": "Runway Revolution: A Vibrant Fusion of Culture and Couture in Morelia",
+    "category": "runway",
+    "date": "2026-07-12",
+    "hero": "https://images.pexels.com/photos/1396112/pexels-photo-1396112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "In the heart of Morelia, fashion transcends borders, celebrating a vivid tapestry of culture and modernity on the runway.",
+    "author": "MODE Editorial",
+    "featured": false
   }
 ]
