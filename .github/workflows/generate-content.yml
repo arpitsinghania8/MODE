@@ -2,8 +2,8 @@ name: Generate Content
 
 on:
   schedule:
-    # Every 2 hours
-    - cron: "7 */2 * * *"
+    # Every 6 hours
+    - cron: "7 */6 * * *"
   workflow_dispatch:
 
 permissions:
