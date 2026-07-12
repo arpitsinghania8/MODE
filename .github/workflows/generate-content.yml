@@ -24,7 +24,7 @@ jobs:
       - run: npm ci
 
       - name: Generate articles
-        run: node scripts/generate-content.mjs
+        run: node scripts/generate-content.mjs --count=5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}

@@ -4,6 +4,7 @@
 // - GitHub Models API (free — uses built-in $GITHUB_TOKEN)
 // - Pexels API (free — uses $PEXELS_API_KEY for fashion photography)
 // Run: GITHUB_TOKEN=<token> PEXELS_API_KEY=<key> node scripts/generate-content.mjs
+//      node scripts/generate-content.mjs --count 5    (batch generate)
 
 import fs from "fs";
 import path from "path";
@@ -13,6 +14,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const ARTICLES_DIR = path.join(ROOT, "src/content/articles");
 const CATEGORIES = ["runway", "street-style", "culture", "beauty"];
+
+// Parse --count argument
+const countArg = process.argv.find((a) => a.startsWith("--count="));
+const BATCH_COUNT = countArg ? parseInt(countArg.split("=")[1], 10) : 1;
 
 const API_URL = "https://models.github.ai/inference/chat/completions";
 const MODEL = "openai/gpt-4o-mini";
@@ -125,7 +130,7 @@ async function callAPI(messages) {
       model: MODEL,
       messages,
       temperature: 0.8,
-      max_tokens: 3000,
+      max_tokens: 5000,
     }),
   });
 
@@ -162,7 +167,7 @@ ${imageHint}
 - Category: ${category}
 - Today's date: ${new Date().toISOString().split("T")[0]}
 - Author: MODE Editorial
-- Length: 3-5 sections with ## headings (250-450 words total)
+- Length: 4-6 sections with ## headings (500-700 words total)
 - Include 1 fashion-forward pull quote formatted as a blockquote with attribution (e.g., > "text" > — Name)
 - Use sophisticated but accessible fashion language
 - Make it feel authentic — like something from a real editorial site
@@ -315,57 +320,67 @@ async function main() {
     return;
   }
 
-  const category = pickCategory(articles);
-  console.log(`Picked category: ${category} (fewest articles)`);
+  const batchSize = Math.min(BATCH_COUNT, 60 - articles.length);
+  if (batchSize > 1) console.log(`Batch mode: generating ${batchSize} articles\n`);
 
-  // Fetch a relevant Pexels photo for this category
-  let pexelsPhoto = null;
-  if (PEXELS_API_KEY) {
-    console.log("\n📷 Searching Pexels for fashion images...");
-    const query = PEXELS_QUERIES[category] || "fashion style";
-    const photos = await searchPexels(query);
-    pexelsPhoto = pickPexelsPhoto(photos);
-    if (pexelsPhoto) {
-      console.log(`   Found photo by ${pexelsPhoto.photographer}`);
+  let success = 0;
+  for (let i = 0; i < batchSize; i++) {
+    const updated = readAllArticles();
+    const category = pickCategory(updated);
+    console.log(`\n[${i + 1}/${batchSize}] Category: ${category} (fewest articles)`);
+
+    // Fetch a relevant Pexels photo for this category
+    let pexelsPhoto = null;
+    if (PEXELS_API_KEY) {
+      const query = PEXELS_QUERIES[category] || "fashion style";
+      const photos = await searchPexels(query);
+      pexelsPhoto = pickPexelsPhoto(photos);
+      if (pexelsPhoto) {
+        console.log(`   📷 Photo by ${pexelsPhoto.photographer}`);
+      } else {
+        console.log("   📷 No photos found, using local hero images");
+      }
     } else {
-      console.log("   No photos found, using local hero images");
+      console.log("   📷 PEXELS_API_KEY not set, using local hero images");
     }
-  } else {
-    console.log("\n📷 PEXELS_API_KEY not set, using local hero images");
-  }
 
-  // Try generating (with retries)
-  let lastError = null;
-  for (let attempt = 1; attempt <= 3; attempt++) {
-    try {
-      console.log(`\n✍️  Generating article (attempt ${attempt})...`);
-      const raw = await generateArticle(category, articles, pexelsPhoto);
-      console.log("   Parsing response...");
+    // Try generating (with retries)
+    let lastError = null;
+    let generated = false;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        console.log(`   ✍️  Generating (attempt ${attempt})...`);
+        const raw = await generateArticle(category, updated, pexelsPhoto);
 
-      const parsed = parseArticle(raw, category, pexelsPhoto);
-      const mdx = buildMDX(parsed);
-      const filePath = path.join(ARTICLES_DIR, `${parsed.slug}.mdx`);
+        const parsed = parseArticle(raw, category, pexelsPhoto);
+        const mdx = buildMDX(parsed);
+        const filePath = path.join(ARTICLES_DIR, `${parsed.slug}.mdx`);
 
-      fs.writeFileSync(filePath, mdx, "utf8");
-      updateArticlesIndex(parsed);
-      console.log(`\n✅ Done!`);
-      console.log(`   Title:   "${parsed.title}"`);
-      console.log(`   File:    src/content/articles/${parsed.slug}.mdx`);
-      console.log(`   Image:   ${parsed.hero.slice(0, 80)}...`);
-      return parsed;
-    } catch (err) {
-      lastError = err;
-      console.error(`   ❌ Attempt ${attempt} failed: ${err.message}`);
-      if (attempt < 3) {
-        const wait = attempt * 5000;
-        console.log(`   Retrying in ${wait / 1000}s...`);
-        await new Promise((r) => setTimeout(r, wait));
+        fs.writeFileSync(filePath, mdx, "utf8");
+        updateArticlesIndex(parsed);
+        console.log(`   ✅ "${parsed.title}"`);
+        success++;
+        generated = true;
+        break;
+      } catch (err) {
+        lastError = err;
+        console.error(`   ❌ Attempt ${attempt} failed: ${err.message}`);
+        if (attempt < 3) {
+          const wait = attempt * 5000;
+          console.log(`   Retrying in ${wait / 1000}s...`);
+          await new Promise((r) => setTimeout(r, wait));
+        }
       }
     }
+    if (!generated) {
+      console.error(`   ❌ Skipping article ${i + 1} after 3 failed attempts`);
+    }
   }
 
-  console.error(`\n❌ All 3 attempts failed. Last error: ${lastError.message}`);
-  process.exit(1);
+  console.log(`\n✅ Done! ${success}/${batchSize} articles generated.`);
+  if (success < batchSize) {
+    console.log(`   ${batchSize - success} article(s) skipped due to errors.`);
+  }
 }
 
 main().catch((err) => {

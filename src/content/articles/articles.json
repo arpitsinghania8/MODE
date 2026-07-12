@@ -1,21 +1,51 @@
 [
   {
-    "slug": "the-new-silhouette",
-    "title": "The New Silhouette",
-    "category": "runway",
-    "date": "2026-06-28",
-    "hero": "https://images.pexels.com/photos/1396112/pexels-photo-1396112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "excerpt": "Fashion houses are rethinking proportions for the new season—longer, leaner, more dramatic than ever.",
+    "slug": "the-art-of-the-red-lip",
+    "title": "The Art of the Red Lip",
+    "category": "beauty",
+    "date": "2026-07-19",
+    "hero": "https://images.pexels.com/photos/2917620/pexels-photo-2917620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "The red lip is the oldest trick in the beauty book — and the one that never stops evolving.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "copenhagen-quiet-luxury",
+    "title": "Copenhagen Street Style: Quiet Luxury by the Water",
+    "category": "street-style",
+    "date": "2026-07-18",
+    "hero": "https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Copenhagen's fashion is a masterclass in subtlety — where quality of construction speaks louder than logos.",
     "author": "MODE Editorial",
     "featured": true
   },
   {
-    "slug": "paris-street-style-july",
-    "title": "Paris Street Style: The Art of Effortless Dressing",
-    "category": "street-style",
-    "date": "2026-07-08",
-    "hero": "https://images.pexels.com/photos/2475235/pexels-photo-2475235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "excerpt": "From the Marais to Montmartre, we document the looks defining Parisian summer fashion.",
+    "slug": "the-return-of-color-blocking",
+    "title": "The Return of Color Blocking",
+    "category": "runway",
+    "date": "2026-07-17",
+    "hero": "https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "After seasons of muted earth tones, the runways are exploding with bold, unapologetic color combinations.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "concrete-jungle-tokyo",
+    "title": "Concrete Jungle: Architecture Meets Fashion in Tokyo",
+    "category": "culture",
+    "date": "2026-07-16",
+    "hero": "https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Tokyo's fashion scene has always drawn from the geometry of its cityscape — here's how the built environment shapes what we wear.",
+    "author": "MODE Editorial",
+    "featured": true
+  },
+  {
+    "slug": "the-fragrance-diaries",
+    "title": "The Fragrance Diaries: Notes of the Season",
+    "category": "beauty",
+    "date": "2026-07-15",
+    "hero": "https://images.pexels.com/photos/965668/pexels-photo-965668.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "From sun-drenched citruses to deep amber woods, the olfactory landscape of summer is a study in contrasts.",
     "author": "MODE Editorial",
     "featured": true
   },
@@ -28,5 +58,25 @@
     "excerpt": "Explore how retro aesthetics influence contemporary fashion, evoking nostalgia while embracing modernity.",
     "author": "MODE Editorial",
     "featured": false
+  },
+  {
+    "slug": "paris-street-style-july",
+    "title": "Paris Street Style: The Art of Effortless Dressing",
+    "category": "street-style",
+    "date": "2026-07-08",
+    "hero": "https://images.pexels.com/photos/2475235/pexels-photo-2475235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "From the Marais to Montmartre, we document the looks defining Parisian summer fashion.",
+    "author": "MODE Editorial",
+    "featured": true
+  },
+  {
+    "slug": "the-new-silhouette",
+    "title": "The New Silhouette",
+    "category": "runway",
+    "date": "2026-06-28",
+    "hero": "https://images.pexels.com/photos/1396112/pexels-photo-1396112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Fashion houses are rethinking proportions for the new season—longer, leaner, more dramatic than ever.",
+    "author": "MODE Editorial",
+    "featured": true
   }
 ]
