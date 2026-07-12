@@ -1,0 +1,42 @@
+name: Generate Content
+
+on:
+  schedule:
+    # Every 2 hours
+    - cron: "7 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate articles
+        run: node scripts/generate-content.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "MODE Bot"
+          git config user.email "bot@mode-blog.com"
+          git add src/content/articles/
+          if git diff --cached --quiet; then
+            echo "No new articles to commit."
+          else
+            git commit -m "Auto: generate new articles"
+            git push
+          fi
