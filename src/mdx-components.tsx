@@ -31,7 +31,7 @@ const components: MDXComponents = {
   a: ({ children, href }) => (
     <a
       href={href}
-      className="text-mode-gold underline underline-offset-2 decoration-mode-gold/40 hover:decoration-mode-gold transition-all duration-200"
+      className="text-mode-gold underline underline-offset-2 decoration-mode-gold/40 neon-glow-hover hover:decoration-mode-gold transition-all duration-200"
     >
       {children}
     </a>
@@ -48,7 +48,7 @@ const components: MDXComponents = {
   ),
   li: ({ children }) => <li>{children}</li>,
   blockquote: ({ children }) => (
-    <blockquote className="border-l-2 border-mode-gold pl-6 my-10 font-display text-display-sm italic text-mode-gold leading-[1.3]">
+    <blockquote className="border-l-2 border-mode-gold pl-6 my-10 font-display text-display-sm italic text-mode-gold leading-[1.3] neon-glow-border">
       {children}
     </blockquote>
   ),

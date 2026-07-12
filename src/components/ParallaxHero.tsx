@@ -32,7 +32,7 @@ export default function ParallaxHero({ article }: ParallaxHeroProps) {
           src={article.hero}
           alt={article.title}
           fill
-          className="object-cover"
+          className="object-cover object-top"
           priority
           sizes="100vw"
         />
@@ -49,12 +49,12 @@ export default function ParallaxHero({ article }: ParallaxHeroProps) {
           <h1 className="font-display text-display-xl text-mode-white leading-[0.95] tracking-[-0.03em] max-w-3xl">
             <Link
               href={`/articles/${article.slug}`}
-              className="hover:text-mode-gold transition-colors duration-300"
+              className="hover:text-mode-gold neon-glow-hover transition-colors duration-300"
             >
               {article.title}
             </Link>
           </h1>
-          <GoldRule className="my-6 max-w-md" />
+          <GoldRule className="my-6 max-w-md neon-pulse-slow" />
           <p className="font-body text-lg text-mode-gray-400 max-w-xl leading-relaxed">
             {article.excerpt}
           </p>

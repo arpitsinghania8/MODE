@@ -42,12 +42,12 @@ export default async function ArticlePage({ params }: PageProps) {
 
         <article>
           {/* Hero image */}
-          <div className="relative w-full h-[50vh] min-h-[400px]">
+          <div className="relative w-full h-[60vh] min-h-[400px]">
             <Image
               src={article.hero}
               alt={article.title}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               priority
               sizes="100vw"
             />
@@ -74,7 +74,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   })}
                 </time>
               </div>
-              <GoldRule className="max-w-md" />
+              <GoldRule className="max-w-md neon-pulse-slow" />
             </div>
           </header>
 

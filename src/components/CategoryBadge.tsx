@@ -15,7 +15,7 @@ export default function CategoryBadge({
 
   return (
     <span
-      className={`inline-block font-body text-xs font-medium uppercase tracking-[0.15em] text-mode-gold ${className}`}
+      className={`inline-block font-body text-xs font-medium uppercase tracking-[0.15em] text-mode-gold neon-glow-text ${className}`}
     >
       {label}
     </span>

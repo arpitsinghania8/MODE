@@ -50,7 +50,7 @@ export default function AboutPage() {
               Editorial:{" "}
               <a
                 href="mailto:editorial@mode.blog"
-                className="text-mode-gold underline underline-offset-2 decoration-mode-gold/40 hover:decoration-mode-gold transition-all"
+                className="text-mode-gold underline underline-offset-2 decoration-mode-gold/40 neon-glow-hover hover:decoration-mode-gold transition-all"
               >
                 editorial@mode.blog
               </a>

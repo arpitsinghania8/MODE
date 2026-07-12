@@ -17,7 +17,7 @@ export default function HomePage() {
     <div>
       {/* ========== HERO ========== */}
       {heroArticle && (
-        <section className="relative w-full h-[80vh] min-h-[600px]">
+        <section className="relative w-full h-[90vh] min-h-[600px]">
           <ParallaxHero article={heroArticle} />
         </section>
       )}
@@ -40,7 +40,7 @@ export default function HomePage() {
           <SectionHeading>Latest Stories</SectionHeading>
           <Link
             href="/articles"
-            className="font-body text-sm uppercase tracking-[0.15em] text-mode-gold hover:text-mode-gold/80 transition-colors duration-200"
+            className="font-body text-sm uppercase tracking-[0.15em] text-mode-gold neon-glow-hover hover:text-mode-gold/80 transition-all duration-200"
           >
             View All
           </Link>

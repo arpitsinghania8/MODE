@@ -38,7 +38,7 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-display-sm text-mode-white hover:text-mode-gold transition-colors duration-200"
+            className="font-display text-display-sm text-mode-white neon-glow-hover hover:text-mode-gold transition-colors duration-200"
           >
             MODE
           </Link>

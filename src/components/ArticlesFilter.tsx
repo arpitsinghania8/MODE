@@ -37,7 +37,7 @@ export default function ArticlesFilter({
           onClick={() => handleCategoryChange(null)}
           className={`font-body text-xs uppercase tracking-[0.15em] px-4 py-2 rounded-sm transition-all duration-200 ${
             activeCategory === null
-              ? "bg-mode-gold text-mode-black font-medium"
+              ? "bg-mode-gold text-mode-black font-medium neon-glow-box"
               : "bg-mode-gray-800 text-mode-gray-400 hover:text-mode-white"
           }`}
           role="tab"
@@ -51,7 +51,7 @@ export default function ArticlesFilter({
             onClick={() => handleCategoryChange(cat.slug)}
             className={`font-body text-xs uppercase tracking-[0.15em] px-4 py-2 rounded-sm transition-all duration-200 ${
               activeCategory === cat.slug
-                ? "bg-mode-gold text-mode-black font-medium"
+                ? "bg-mode-gold text-mode-black font-medium neon-glow-box"
                 : "bg-mode-gray-800 text-mode-gray-400 hover:text-mode-white"
             }`}
             role="tab"

@@ -47,7 +47,7 @@ export default function ArticleCard({ article, index = 0 }: ArticleCardProps) {
           />
         </div>
         <CategoryBadge category={article.category} className="mb-2" />
-        <h3 className="font-display text-display-sm text-mode-white leading-[1.15] mb-2 group-hover:text-mode-gold transition-colors duration-300">
+        <h3 className="font-display text-display-sm text-mode-white leading-[1.15] mb-2 neon-glow-hover group-hover:text-mode-gold transition-colors duration-300">
           {article.title}
         </h3>
         <p className="font-body text-sm text-mode-gray-400 leading-relaxed mb-3 line-clamp-2">

@@ -66,11 +66,6 @@ body {
   line-height: var(--leading-body);
 }
 
-::selection {
-  background-color: var(--color-mode-gold);
-  color: var(--color-mode-black);
-}
-
 /* ===================================================================
    Typography Utilities
    =================================================================== */
@@ -149,6 +144,70 @@ body {
 
 .border-gold {
   border-color: var(--color-mode-gold);
+}
+
+/* --- Neon Glow Effects --- */
+
+.neon-glow-text {
+  text-shadow:
+    0 0 4px var(--color-mode-gold),
+    0 0 12px var(--color-mode-gold),
+    0 0 24px color-mix(in srgb, var(--color-mode-gold) 60%, transparent);
+}
+
+.neon-glow-box {
+  box-shadow:
+    0 0 6px var(--color-mode-gold),
+    0 0 16px color-mix(in srgb, var(--color-mode-gold) 50%, transparent);
+}
+
+.neon-glow-border {
+  box-shadow:
+    inset 0 0 3px var(--color-mode-gold),
+    0 0 6px var(--color-mode-gold),
+    0 0 14px color-mix(in srgb, var(--color-mode-gold) 40%, transparent);
+}
+
+/* Neon on hover only — subtle, interactive */
+.neon-glow-hover {
+  transition: text-shadow 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-glow-hover:hover {
+  text-shadow:
+    0 0 4px var(--color-mode-gold),
+    0 0 14px var(--color-mode-gold),
+    0 0 28px color-mix(in srgb, var(--color-mode-gold) 50%, transparent);
+}
+
+/* --- Neon Pulse Animation --- */
+
+@keyframes neon-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow:
+      0 0 4px var(--color-mode-gold),
+      0 0 12px color-mix(in srgb, var(--color-mode-gold) 40%, transparent);
+  }
+  50% {
+    opacity: 0.85;
+    box-shadow:
+      0 0 2px var(--color-mode-gold),
+      0 0 6px color-mix(in srgb, var(--color-mode-gold) 25%, transparent);
+  }
+}
+
+.neon-pulse-slow {
+  animation: neon-pulse 4s ease-in-out infinite;
+}
+
+/* Selection with glow */
+::selection {
+  background-color: color-mix(in srgb, var(--color-mode-gold) 70%, transparent);
+  color: var(--color-mode-white);
+  text-shadow:
+    0 0 6px var(--color-mode-gold),
+    0 0 14px color-mix(in srgb, var(--color-mode-gold) 50%, transparent);
 }
 
 /* ===================================================================
