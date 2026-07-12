@@ -1,9 +1,11 @@
 import SectionHeading from "@/components/SectionHeading";
 import GoldRule from "@/components/GoldRule";
+import { categories } from "@/data/categories";
 
 export default function AboutPage() {
   return (
     <div className="pt-24 md:pt-28">
+      {/* ========== HEADER ========== */}
       <section className="content-container section-spacing-sm">
         <SectionHeading>About MODE</SectionHeading>
       </section>
@@ -12,6 +14,7 @@ export default function AboutPage() {
         <GoldRule />
       </div>
 
+      {/* ========== MANIFESTO ========== */}
       <section className="content-container section-spacing-md">
         <div className="max-w-3xl">
           <p className="font-display text-display-md text-mode-white leading-[1.1] mb-8">
@@ -34,30 +37,96 @@ export default function AboutPage() {
               crafted with the same attention to detail we expect from the
               garments we cover.
             </p>
-            <p>
-              Based in New York and Paris. Published daily.
-            </p>
-          </div>
-
-          <GoldRule className="my-12 max-w-sm" />
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-display text-display-sm text-mode-white mb-4">
-              Contact
-            </h3>
-            <p className="font-body text-mode-gray-500">
-              Editorial:{" "}
-              <a
-                href="mailto:editorial@mode.blog"
-                className="text-mode-gold underline underline-offset-2 decoration-mode-gold/40 neon-glow-hover hover:decoration-mode-gold transition-all"
-              >
-                editorial@mode.blog
-              </a>
-            </p>
           </div>
         </div>
       </section>
+
+      <div className="content-container">
+        <GoldRule />
+      </div>
+
+      {/* ========== EDITORIAL PHILOSOPHY ========== */}
+      <section className="content-container section-spacing-md">
+        <div className="max-w-3xl">
+          <h3 className="font-display text-display-sm text-mode-white mb-8">
+            Editorial Philosophy
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="border border-mode-gray-800 rounded-sm p-6">
+              <h4 className="font-display text-lg text-mode-gold mb-3">
+                Precision
+              </h4>
+              <p className="font-body text-mode-gray-500 leading-relaxed">
+                Every word, every image, every layout decision serves the story.
+                We edit ruthlessly and publish with intention.
+              </p>
+            </div>
+            <div className="border border-mode-gray-800 rounded-sm p-6">
+              <h4 className="font-display text-lg text-mode-gold mb-3">
+                Perspective
+              </h4>
+              <p className="font-body text-mode-gray-500 leading-relaxed">
+                Fashion is a cultural mirror. We look beyond the runway to
+                explore how style intersects with art, music, film, and society.
+              </p>
+            </div>
+            <div className="border border-mode-gray-800 rounded-sm p-6">
+              <h4 className="font-display text-lg text-mode-gold mb-3">
+                Craft
+              </h4>
+              <p className="font-body text-mode-gray-500 leading-relaxed">
+                From the construction of a garment to the construction of a
+                sentence — quality is non-negotiable. We champion the makers.
+              </p>
+            </div>
+            <div className="border border-mode-gray-800 rounded-sm p-6">
+              <h4 className="font-display text-lg text-mode-gold mb-3">
+                Restraint
+              </h4>
+              <p className="font-body text-mode-gray-500 leading-relaxed">
+                In an age of excess, we choose clarity. Swiss Modernism teaches
+                us that what you leave out matters as much as what you include.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="content-container">
+        <GoldRule />
+      </div>
+
+      {/* ========== WHAT WE COVER ========== */}
+      <section className="content-container section-spacing-md">
+        <div className="max-w-3xl">
+          <h3 className="font-display text-display-sm text-mode-white mb-8">
+            What We Cover
+          </h3>
+
+          <div className="space-y-6">
+            {categories.map((cat) => (
+              <div
+                key={cat.slug}
+                className="flex items-start gap-4 py-4 border-b border-mode-gray-800 last:border-b-0"
+              >
+                <span className="font-display text-display-sm text-mode-gold leading-none mt-1 min-w-[2ch]">
+                  {String(categories.indexOf(cat) + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h4 className="font-display text-xl text-mode-white mb-1">
+                    {cat.name}
+                  </h4>
+                  <p className="font-body text-mode-gray-500">
+                    {cat.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
