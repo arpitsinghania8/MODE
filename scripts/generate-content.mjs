@@ -245,7 +245,7 @@ function parseArticle(raw, category, pexelsPhoto) {
   // Append photographer credit to article as a subtle note
   let content = rawContent;
   if (photographerCredit) {
-    content += `\n\n<div style="font-size:0.75rem;color:#666;margin-top:2rem">\n  Hero image by [${photographerCredit.name}](${photographerCredit.url}) on [Pexels](${photographerCredit.pexelsUrl}).\n</div>`;
+    content += `\n\n---\n\n*Photo by [${photographerCredit.name}](${photographerCredit.url}) on [Pexels](${photographerCredit.pexelsUrl}).*`;
   }
 
   return {
