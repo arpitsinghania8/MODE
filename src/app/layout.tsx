@@ -17,12 +17,15 @@ const playfairDisplay = Playfair_Display({
   display: "swap",
 });
 
+const isGithubActions = process.env.GITHUB_ACTIONS === "true";
+const basePath = isGithubActions ? "/MODE" : "";
+
 export const metadata: Metadata = {
   title: "MODE — The Business of Fashion & Culture",
   description:
     "A curated editorial experience covering fashion, culture, and style through the lens of Swiss Modernism.",
   icons: {
-    icon: "/logo-mark.svg",
+    icon: `${basePath}/logo-mark.svg`,
   },
 };
 
