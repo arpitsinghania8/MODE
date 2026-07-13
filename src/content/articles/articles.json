@@ -278,5 +278,55 @@
     "excerpt": "Discover how to enhance your natural glow with effortless beauty techniques.",
     "author": "MODE Editorial",
     "featured": false
+  },
+  {
+    "slug": "white-dress-revolution",
+    "title": "The White Dress Revolution: A Modern Take on Timeless Elegance",
+    "category": "runway",
+    "date": "2026-07-13",
+    "hero": "https://images.pexels.com/photos/5185594/pexels-photo-5185594.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Discover how the classic white dress became a bold statement on the runway, merging tradition with modernity.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "street-style-reflections",
+    "title": "Reflections of Urban Chic: The Monochrome Movement",
+    "category": "street-style",
+    "date": "2026-07-13",
+    "hero": "https://images.pexels.com/photos/30512455/pexels-photo-30512455.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Dive into the monochrome trend captivating urban fashionistas and redefining individuality on the streets.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-interplay-of-history-and-fashion",
+    "title": "The Interplay of History and Fashion: Revisiting Feminine Costumes",
+    "category": "culture",
+    "date": "2026-07-13",
+    "hero": "https://images.pexels.com/photos/5326783/pexels-photo-5326783.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Explore how historical feminine costumes inspire contemporary fashion narratives.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-art-of-light-reflection",
+    "title": "The Art of Light Reflection: Elevating Everyday Beauty",
+    "category": "beauty",
+    "date": "2026-07-13",
+    "hero": "https://images.pexels.com/photos/5468710/pexels-photo-5468710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Discover how the interplay of light transforms your beauty routine into an art form.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-ethereal-elegance-of-abstract-forms",
+    "title": "The Ethereal Elegance of Abstract Forms: A New Dimension on the Runway",
+    "category": "runway",
+    "date": "2026-07-13",
+    "hero": "https://images.pexels.com/photos/5185591/pexels-photo-5185591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Step into a realm where fashion transcends mere clothing and becomes an artful expression of abstract elegance.",
+    "author": "MODE Editorial",
+    "featured": false
   }
 ]
