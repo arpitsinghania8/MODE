@@ -107,12 +107,6 @@ featured: true
 | `author` | string | Author name |
 | `featured` | boolean | Shows on homepage hero if true |
 
-Use the batch generation script to create multiple articles at once:
-
-```bash
-node scripts/generate-content.mjs --count=5
-```
-
 ## Design System
 
 MODE uses a **Swiss Modernism 2.0** aesthetic — clean lines, generous whitespace, and a restrained color palette:
