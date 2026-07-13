@@ -328,5 +328,55 @@
     "excerpt": "Step into a realm where fashion transcends mere clothing and becomes an artful expression of abstract elegance.",
     "author": "MODE Editorial",
     "featured": false
+  },
+  {
+    "slug": "vintage-winter-essence",
+    "title": "Embracing Nostalgia: Vintage Winter Attire in Contemporary Street Style",
+    "category": "street-style",
+    "date": "2026-07-13",
+    "hero": "https://images.pexels.com/photos/34632893/pexels-photo-34632893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Step into a world where vintage winter elegance merges effortlessly with today's street style.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-vibrancy-of-textiles",
+    "title": "The Vibrancy of Textiles: A Tapestry of Culture and Identity",
+    "category": "culture",
+    "date": "2026-07-13",
+    "hero": "https://images.pexels.com/photos/5326783/pexels-photo-5326783.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Explore how textiles narrate stories of culture, identity, and innovation in today's fashion landscape.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "beauty-redefined-the-power-of-headbands",
+    "title": "Beauty Redefined: The Power of Headbands",
+    "category": "beauty",
+    "date": "2026-07-13",
+    "hero": "https://images.pexels.com/photos/34650790/pexels-photo-34650790.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Discover how the humble headband has transformed into a symbol of confidence and elegance in modern beauty.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "the-quintessential-drape",
+    "title": "The Quintessential Drape: The New Wave of Fluid Fashion",
+    "category": "runway",
+    "date": "2026-07-13",
+    "hero": "https://images.pexels.com/photos/262039/pexels-photo-262039.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "This season's runway celebrates the art of draping, blending sophistication with effortless movement.",
+    "author": "MODE Editorial",
+    "featured": false
+  },
+  {
+    "slug": "modern-urban-flair",
+    "title": "Modern Urban Flair: The Bold Statements of Street Style",
+    "category": "street-style",
+    "date": "2026-07-13",
+    "hero": "https://images.pexels.com/photos/2475235/pexels-photo-2475235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "excerpt": "Explore the vibrant expressions of individuality that define today's urban fashion landscape.",
+    "author": "MODE Editorial",
+    "featured": false
   }
 ]
